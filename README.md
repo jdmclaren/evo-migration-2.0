@@ -2,19 +2,23 @@
 
 Migration model with evolutionary algorithm, written in MATLAB
 
-Simulates migration of naive migrating birds according to inherited magnetic (and other, e.g., star) compass use, 
-with geomagnetic signposts to switch between inherited headings en route, using mean field (IGRF) geomagnetic data between 1900-2024.
+This is an extension of the first version (used in McLaren et al Movement Ecol, 2023), found in https://github.com/jdmclaren/evo-migration
+
+Simulates migration of naive (first-time) migrating birds according to inherited migratorz headings, which can be both inherited 
+and directed relative to either a geogrphic, magnetic or sun compass "axis". Another option is to  
+follow geomagnetic signposts to switch between inherited headings en route, using mean field (IGRF) geomagnetic data between 1900-2024.
 The evolutionary strategy algorithm implemented simaultes inheritance of headings and signposts as averages, 
 including intrinsic (stochastic) variability.
 
-(see McLaren et al, https://www.biorxiv.org/content/10.1101/2022.06.29.498190v2, under review at Movement Ecology)
+This version includes synthetic modelled winds, which switch stochastically but follow the general trade vs. Westerly pattern globally.
 
-To run model, type "run_evo_migr" in the MATLAB command window, and follow the prompts to specify compass and signpost use, 
-and whether to run a full 124-year or shorter (default 10-year) model simulation.
+Also in this version, hi-res coastal and vegetation data are incorporated.
 
-Other choices can be edited in the script itself (run_evo_migr.m). 
+These are first applied to Long-tailed cuckoo migration (Koekoa), using script "run_evo_gene_phene_LTC.m".
 
-The folder "plot_scripts" contains a few additional scripts to visualize model output.
+Another change is the incorporation of separate heading-related alleles; for the cuckoo migration study, however, 
+we considered headings as a trait controlled by many genes, so use the option "Inf" in the menu when running the model, 
+indicating effectively infinite numbersof controlling alleles.
 
 In order to run the model and plotting routines, the following MATAB toolboxes are required:
 
